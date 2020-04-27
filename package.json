@@ -1,0 +1,32 @@
+{
+  "name": "rimraf2",
+  "version": "0.1.0",
+  "description": "rimraf version 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kmalakoff/rimraf2.git"
+  },
+  "keywords": [
+    "rimraf",
+    "rm",
+    "del",
+    "rmrf",
+    "remove",
+    "delete",
+    "directory",
+    "dir"
+  ],
+  "author": "Kevin Malakoff <kmalakoff@gmail.com> (https://github.com/kmalakoff)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmalakoff/rimraf2/issues"
+  },
+  "homepage": "https://github.com/kmalakoff/rimraf2#readme",
+  "dependencies": {
+    "rimraf": "^2.7.1"
+  }
+}
