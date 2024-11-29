@@ -1,11 +1,11 @@
 {
-  "name": "rimraf",
+  "name": "rimraf2",
   "version": "2.7.1",
   "main": "rimraf.js",
   "description": "A deep deletion module for node (like `rm -rf`)",
   "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
   "license": "ISC",
-  "repository": "git://github.com/isaacs/rimraf.git",
+  "repository": "https://github.com/kmalakoff/rimraf2.git",
   "scripts": {
     "preversion": "npm test",
     "postversion": "npm publish",
@@ -13,17 +13,18 @@
     "test": "tap test/*.js"
   },
   "bin": "./bin.js",
-  "dependencies": {
-    "glob": "^7.1.3"
-  },
   "files": [
     "LICENSE",
     "README.md",
     "bin.js",
     "rimraf.js"
   ],
+  "optionalDependencies": {
+    "glob": "*"
+  },
   "devDependencies": {
+    "glob": "^7.1.3",
     "mkdirp": "^0.5.1",
-    "tap": "^12.1.1"
+    "tap": "^9.0.3"
   }
 }
