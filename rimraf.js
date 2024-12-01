@@ -5,10 +5,16 @@ var assert = require("assert")
 var path = require("path")
 var fs = require("fs")
 var glob = undefined
-try {
-  glob = require("glob")
-} catch (_err) {
-  // treat glob as optional.
+
+  // OPTIONAL PEER: load glob only when requested
+var globLoaded = false;
+function loadGlob() { 
+  globLoaded = true;
+  try {
+    glob = require("glob")
+  } catch (_err) {
+    // treat glob as optional.
+  }
 }
 var _0666 = parseInt('666', 8)
 
@@ -38,10 +44,13 @@ function defaults (options) {
   })
 
   options.maxBusyTries = options.maxBusyTries || 3
-  options.emfileWait = options.emfileWait || 1000
+  options.emfileWait = options.emfileWait || 1000  
   if (options.glob === false) {
     options.disableGlob = true
   }
+  // OPTIONAL PEER: load glob only when requested
+  if (!options.disableGlob && !globLoaded) loadGlob()
+
   if (options.disableGlob !== true && glob === undefined) {
     throw Error('glob dependency not found, set `options.disableGlob = true` if intentional')
   }
